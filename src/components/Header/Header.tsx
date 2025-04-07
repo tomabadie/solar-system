@@ -1,6 +1,10 @@
 import Hamburger from "../Hamburger/Hamburger";
 import "./Header.css";
 
+import { useContext } from "react";
+import PlanetContext from "../../context/PlanetContext";
+
+
 function Header() {
   const planets = [
     { id: "terre" },
@@ -13,6 +17,18 @@ function Header() {
     { id: "saturne" },
     { id: "mars" },
   ];
+
+  const {planet, setPlanet} = useContext(PlanetContext);
+
+  const changePlanet = (newPlanet : string) => {
+    const newUrl = `https://api.le-systeme-solaire.net/rest/bodies/${newPlanet}`;
+    fetch (newUrl)
+    .then(response => response.json())
+    .then(data => {
+      setPlanet(data);
+    })
+    .catch(err => console.error(err))
+  }
 
   return (
     <header className="top-header">

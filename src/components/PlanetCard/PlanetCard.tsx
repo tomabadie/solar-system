@@ -4,7 +4,7 @@ interface PlanetCardInterface {
     planet : {
         id : string,
         name : string,
-        moons : [
+        moons? : [
             {
                 moon : string,
                 rel : string
@@ -32,7 +32,7 @@ const PlanetCard = ( {planet} : PlanetCardInterface) => {
                 <br />
                 <strong>Radius :</strong> {planet.meanRadius} km (i.e. {planet.meanRadius / earthMeanRadius} Earth radius)
                 <br />
-                <strong>Number of moons :</strong> {planet.moons.length}
+                <strong>Number of moons :</strong> {planet.moons ? planet.moons.length : "no moon"}
                 </p>
             </section>
         </article>
