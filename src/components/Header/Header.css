@@ -1,0 +1,8 @@
+.desktop-nav {
+  display: flex;
+  ul {
+    padding: 0;
+    li {
+    }
+  }
+}
