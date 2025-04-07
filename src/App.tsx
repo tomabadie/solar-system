@@ -8,6 +8,7 @@ import PlanetCard from "./components/PlanetCard/PlanetCard";
 const initialPlanet = {
   id : "terre",
   name : "La Terre",
+  englishName : "Earth",
   moons : [
       {
           moon : "La lune",
@@ -36,7 +37,7 @@ function App() {
   return (
     <> 
         <Header changePlanet={changePlanet}/>
-        <PlanetCard planet={planet} />
+        <PlanetCard planet={planet} changePlanet={changePlanet} />
     </>
   );
 }
