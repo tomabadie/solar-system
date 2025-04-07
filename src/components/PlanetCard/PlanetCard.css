@@ -1,6 +1,6 @@
 article {
     width: 90%;
-    max-width: ;
+    max-width: 500px ;
     display: flex;
     flex-direction: column;
     border: 1px solid green;
@@ -18,5 +18,7 @@ article {
 }
 
 @media screen and (width > 650px)  {
-    
+    article {
+        flex-direction: row;
+    }
 }
