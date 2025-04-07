@@ -1,11 +1,12 @@
+import { useState } from "react";
 import Hamburger from "../Hamburger/Hamburger";
 import "./Header.css";
 
 interface HeaderProps {
-  changePlanet : (id : string) => void
+  changePlanet: (id: string) => void;
 }
 
-function Header({changePlanet} : HeaderProps) {
+function Header({ changePlanet }: HeaderProps) {
   const planets = [
     { id: "terre" },
     { id: "venus" },
@@ -17,12 +18,16 @@ function Header({changePlanet} : HeaderProps) {
     { id: "saturne" },
     { id: "mars" },
   ];
-
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+  };
   return (
     <header className="top-header">
-      <div className="hamburger">
+      <div className="hamburger" onClick={toggleHamburger}>
         <Hamburger />
       </div>
+      {/* Desktop */}
       <nav className="desktop-nav">
         {planets.map((planet) => (
           <button
@@ -34,6 +39,22 @@ function Header({changePlanet} : HeaderProps) {
           </button>
         ))}
       </nav>
+      {/* navBar onclick burger */}
+      {hamburgerOpen ? (
+        <nav className="mobile-nav">
+          {planets.map((planet) => (
+            <button
+              type="button"
+              key={planet.id}
+              onClick={() => {
+                changePlanet(planet.id);
+              }}
+            >
+              {planet.id}
+            </button>
+          ))}
+        </nav>
+      ) : null}
     </header>
   );
 }
