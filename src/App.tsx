@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { createContext } from "react";
 import "./App.css";
 
 import Header from "./components/Header/Header";
 import PlanetCard from "./components/PlanetCard/PlanetCard";
-import PlanetContext from "./context/PlanetContext";
+
 
 const initialPlanet = {
   id : "terre",
@@ -24,12 +23,20 @@ function App() {
 
   const [planet, setPlanet] = useState(initialPlanet);
 
+  const changePlanet = (newPlanet : string) => {
+    const newUrl = `https://api.le-systeme-solaire.net/rest/bodies/${newPlanet}`;
+    fetch (newUrl)
+    .then(response => response.json())
+    .then(data => {
+      setPlanet(data);
+    })
+    .catch(err => console.error(err))
+  }
+
   return (
-    <>
-      <PlanetContext.Provider value={{planet : planet, setPlanet : setPlanet}}>
-        <Header />
+    <> 
+        <Header changePlanet={changePlanet}/>
         <PlanetCard planet={planet} />
-      </PlanetContext.Provider>
     </>
   );
 }
