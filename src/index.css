@@ -1,5 +1,9 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --light-text-color: rgba(255, 255, 255, 1);
+  --background-dark-color: linear-gradient(#233164, black);
+  --main-bloc-dark-color: rgb(66, 66, 66);
+  --main-bloc-dark-border-color: rgba(30, 30, 30, 1);
 }
 
 body {
@@ -7,4 +11,5 @@ body {
   display: flex;
   min-height: 100vh;
   box-sizing: border-box;
+  background: var(--background-dark-color);
 }
