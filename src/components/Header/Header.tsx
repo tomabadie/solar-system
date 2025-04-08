@@ -8,15 +8,15 @@ interface HeaderProps {
 
 function Header({ changePlanet }: HeaderProps) {
   const planets = [
-    { id: "mercure" },
-    { id: "venus" },
-    { id: "terre" },
-    { id: "mars" },
-    { id: "jupiter" },
-    { id: "saturne" },
-    { id: "uranus" },
-    { id: "neptune" },
-    { id: "pluton" },
+    { id: "Mercure" },
+    { id: "Venus" },
+    { id: "Terre" },
+    { id: "Mars" },
+    { id: "Jupiter" },
+    { id: "Saturne" },
+    { id: "Uranus" },
+    { id: "Neptune" },
+    { id: "Pluton" },
   ];
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const toggleHamburger = () => {
