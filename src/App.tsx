@@ -3,6 +3,7 @@ import "./App.css";
 
 import Header from "./components/Header/Header";
 import PlanetCard from "./components/PlanetCard/PlanetCard";
+import SolarPlanets from "./components/SolarPlanets/SolarPlanets";
 
 const initialPlanet = {
   id: "terre",
@@ -34,10 +35,11 @@ function App() {
 
   return (
     <>
-      <main className="main-container">
-        <Header changePlanet={changePlanet} />
-        <PlanetCard planet={planet} changePlanet={changePlanet} />
-      </main>
+      <Header changePlanet={changePlanet} />
+      <PlanetCard planet={planet} changePlanet={changePlanet} />
+      <div className="all-planet">
+        <SolarPlanets />
+      </div>
     </>
   );
 }

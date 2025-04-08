@@ -1,6 +1,58 @@
 .top-header {
   padding: 4px 0 24px 4px;
 }
+
+.mobile-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+@keyframes buttonEffect {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav button {
+  opacity: 0;
+  animation: buttonEffect 0.3s ease forwards;
+}
+
+.mobile-nav button:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-nav button:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mobile-nav button:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.mobile-nav button:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.mobile-nav button:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.mobile-nav button:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.mobile-nav button:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.mobile-nav button:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.mobile-nav button:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
 .desktop-nav {
   display: none;
 }
@@ -13,65 +65,72 @@ button {
   padding: 1rem 1.5rem;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  width: 80px;
+  display: flex;
+  justify-content: center;
 }
+/* TEST */
+/* button:hover {
+  transform: scale(2);
+  box-shadow: 0 0 15px blue;
+  background-color: #2a2a2a;
+} */
 
-.mercure {
+.Mercure {
   &:hover {
     background-color: #8b8b8b;
   }
 }
 
-.venus {
+.Venus {
   &:hover {
     background-color: #e7c27d;
   }
 }
 
-.terre {
+.Terre {
   &:hover {
     background-color: #2e52a3;
   }
 }
 
-.mars {
+.Mars {
   &:hover {
     background-color: #d14a28;
   }
 }
 
-.jupiter {
+.Jupiter {
   &:hover {
     background-color: #d2b48c;
   }
 }
 
-.saturne {
+.Saturne {
   &:hover {
     background-color: #e6c799;
   }
 }
 
-.uranus {
+.Uranus {
   &:hover {
     background-color: #66ccff;
   }
 }
 
-.neptune {
+.Neptune {
   &:hover {
     background-color: #2d5da1;
   }
 }
 
-.pluton {
+.Pluton {
   &:hover {
     background-color: #bfa387;
   }
 }
 
 button:hover {
-  /* Just trying something with any color  */
-  background-color: aliceblue;
   color: black;
   transform: scale(0.9);
 }
@@ -85,11 +144,18 @@ button:activate {
     display: block;
     display: flex;
     justify-content: space-evenly;
+    gap: 20px;
+    padding: 16px;
+    flex-wrap: wrap;
   }
   .hamburger {
     display: none;
   }
   .mobile-nav {
     display: none;
+  }
+  .desktop-nav button {
+    min-width: 86px;
+    margin: 0;
   }
 }
