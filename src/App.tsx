@@ -34,10 +34,8 @@ function App() {
 
   return (
     <>
-      <main className="main-container">
         <Header changePlanet={changePlanet} />
         <PlanetCard planet={planet} changePlanet={changePlanet} />
-      </main>
     </>
   );
 }
