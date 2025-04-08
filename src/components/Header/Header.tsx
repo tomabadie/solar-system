@@ -8,23 +8,28 @@ interface HeaderProps {
 
 function Header({ changePlanet }: HeaderProps) {
   const planets = [
-    { id: "terre" },
-    { id: "venus" },
-    { id: "pluton" },
-    { id: "uranus" },
-    { id: "jupiter" },
-    { id: "neptune" },
     { id: "mercure" },
-    { id: "saturne" },
+    { id: "venus" },
+    { id: "terre" },
     { id: "mars" },
+    { id: "jupiter" },
+    { id: "saturne" },
+    { id: "uranus" },
+    { id: "neptune" },
+    { id: "pluton" },
   ];
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
   };
+
   return (
     <header className="top-header">
-      <div className="hamburger" onClick={toggleHamburger}>
+      <div
+        className="hamburger"
+        onClick={toggleHamburger}
+        onKeyUp={toggleHamburger}
+      >
         <Hamburger />
       </div>
       {/* Desktop */}
@@ -34,13 +39,14 @@ function Header({ changePlanet }: HeaderProps) {
             type="button"
             key={planet.id}
             onClick={() => changePlanet(planet.id)}
+            className={planet.id}
           >
             {planet.id}
           </button>
         ))}
       </nav>
       {/* navBar onclick burger */}
-      {hamburgerOpen ? (
+      {hamburgerOpen && (
         <nav className="mobile-nav">
           {planets.map((planet) => (
             <button
@@ -49,12 +55,13 @@ function Header({ changePlanet }: HeaderProps) {
               onClick={() => {
                 changePlanet(planet.id);
               }}
+              className={planet.id}
             >
               {planet.id}
             </button>
           ))}
         </nav>
-      ) : null}
+      )}
     </header>
   );
 }

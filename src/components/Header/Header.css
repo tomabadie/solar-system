@@ -14,15 +14,72 @@ button {
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
+
+.mercure {
+  &:hover {
+    background-color: #8b8b8b;
+  }
+}
+
+.venus {
+  &:hover {
+    background-color: #e7c27d;
+  }
+}
+
+.terre {
+  &:hover {
+    background-color: #2e52a3;
+  }
+}
+
+.mars {
+  &:hover {
+    background-color: #d14a28;
+  }
+}
+
+.jupiter {
+  &:hover {
+    background-color: #d2b48c;
+  }
+}
+
+.saturne {
+  &:hover {
+    background-color: #e6c799;
+  }
+}
+
+.uranus {
+  &:hover {
+    background-color: #66ccff;
+  }
+}
+
+.neptune {
+  &:hover {
+    background-color: #2d5da1;
+  }
+}
+
+.pluton {
+  &:hover {
+    background-color: #bfa387;
+  }
+}
+
 button:hover {
   /* Just trying something with any color  */
   background-color: aliceblue;
   color: black;
   transform: scale(0.9);
 }
+
 button:activate {
   transform: scale(1);
 }
+
 @media screen and (min-width: 992px) {
   .desktop-nav {
     display: block;

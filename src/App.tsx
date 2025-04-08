@@ -5,14 +5,14 @@ import Header from "./components/Header/Header";
 import PlanetCard from "./components/PlanetCard/PlanetCard";
 
 const initialPlanet = {
-  id : "terre",
-  name : "La Terre",
-  englishName : "Earth",
-  moons : [
-      {
-          moon : "La lune",
-          rel : "https://api.le-systeme-solaire.net/rest/bodies/lune"
-      }
+  id: "terre",
+  name: "La Terre",
+  englishName: "Earth",
+  moons: [
+    {
+      moon: "La lune",
+      rel: "https://api.le-systeme-solaire.net/rest/bodies/lune",
+    },
   ],
   gravity: 9.8,
   meanRadius: 6371.0084,
