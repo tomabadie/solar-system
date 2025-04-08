@@ -2,8 +2,16 @@
   width: 100%;
 }
 .all-planet {
+  z-index: -5;
+  margin: 0;
   color: rgba(83, 82, 82, 0.667);
-  margin: 0 auto;
-  width: 50%;
-  padding: 64px;
+}
+
+@media screen and (width >= 992px) {
+  .all-planet {
+    width: 40%;
+    position: absolute;
+    top: 10%;
+    left: -5%;
+  }
 }

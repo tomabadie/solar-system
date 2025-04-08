@@ -1,4 +1,5 @@
 :root {
+  /* height: 130vh; */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   --light-text-color: rgba(234, 226, 226, 1);
   --background-dark-color: linear-gradient(#233164, black);
